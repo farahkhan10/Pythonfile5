@@ -1,0 +1,13 @@
+[Unit]
+Description=hello world pecan service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/http/bin/pecan serve /opt/http/api/config.py
+WorkingDirectory=/opt/http/api
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
